@@ -1,0 +1,84 @@
+---
+---
+
+<div id="container">
+	<main>
+		<div id="availability">
+			<h1>DISPONIBLE</h1>
+			<p class="email">
+				<a href="mailto:info@zerotrust.cl">info@zerotrust.cl</a>
+			</p>
+		</div>
+	</main>
+</div>
+
+<style>
+	#container {
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	}
+
+	main {
+		text-align: center;
+	}
+
+	#availability h1 {
+		font-size: 4rem;
+		font-weight: bold;
+		color: white;
+		text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+		margin: 0;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+	}
+
+	.email {
+		margin-top: 1.5rem;
+	}
+
+	.email a {
+		color: white;
+		font-size: 1.2rem;
+		text-decoration: none;
+		padding: 8px 16px;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		border-radius: 25px;
+		transition: all 0.3s ease;
+		display: inline-block;
+	}
+
+	.email a:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+		border-color: rgba(255, 255, 255, 0.6);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	@media screen and (max-width: 768px) {
+		#availability h1 {
+			font-size: 2.5rem;
+			letter-spacing: 2px;
+		}
+
+		.email a {
+			font-size: 1rem;
+			padding: 6px 12px;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		#availability h1 {
+			font-size: 2rem;
+			letter-spacing: 1px;
+		}
+
+		.email a {
+			font-size: 0.9rem;
+			padding: 5px 10px;
+		}
+	}
+</style>
