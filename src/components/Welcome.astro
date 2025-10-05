@@ -82,3 +82,65 @@
 		}
 	}
 </style>
+
+<script>
+	import { gsap } from 'gsap';
+
+	// Función para animar cuando el DOM esté listo
+	function animateElements() {
+		const headline = document.querySelector('#availability h1');
+		const email = document.querySelector('#availability .email');
+
+		if (headline) {
+			// Configurar estado inicial
+			gsap.set(headline, { 
+				y: -100, 
+				opacity: 0, 
+				scale: 0.8,
+				transformOrigin: '50% 50%'
+			});
+
+			// Timeline para secuenciar las animaciones
+			const tl = gsap.timeline();
+
+			// Animación de entrada
+			tl.to(headline, {
+				y: 0,
+				opacity: 1,
+				scale: 1,
+				duration: 1,
+				ease: 'back.out(1.7)',
+			});
+
+			// Animación de pulso continuo
+			tl.to(headline, {
+				scale: 1.1,
+				duration: 1.5,
+				ease: 'sine.inOut',
+				yoyo: true,
+				repeat: -1,
+			}, '+=0.5');
+		}
+
+		if (email) {
+			// Configurar estado inicial del email
+			gsap.set(email, { y: 30, opacity: 0 });
+
+			// Animar email después del título
+			gsap.to(email, {
+				y: 0,
+				opacity: 1,
+				duration: 0.8,
+				delay: 1.2,
+				ease: 'power2.out'
+			});
+		}
+	}
+
+	// Ejecutar cuando el DOM esté listo
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', animateElements);
+	} else {
+		animateElements();
+	}
+</script>
